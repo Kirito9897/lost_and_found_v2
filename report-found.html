@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Report Found — LOST/FOUND</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="report" data-type="found">
+<section class="form-page container">
+  <div class="form-side">
+    <span class="mono">Path 02 · Found Report</span>
+    <h1>You found<br>something.<br><span style="color:transparent;-webkit-text-stroke:1.5px var(--ink)">Register it.</span></h1>
+    <p>Register the discovery. Keep hold of the item — the archive team will verify the owner privately before anyone collects it. Never share sensitive details publicly.</p>
+  </div>
+  <div>
+    <form class="form-panel" id="reportForm" novalidate>
+      <div class="field">
+        <label for="f_title">Item name <span class="req">*</span></label>
+        <input id="f_title" name="title" required placeholder="e.g. Silver wristwatch">
+        <span class="err">Please name the item.</span>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f_cat">Category <span class="req">*</span></label>
+          <select id="f_cat" name="category" required>
+            <option value="">Select…</option>
+            <option>Electronics</option><option>Books / Stationery</option><option>Documents</option>
+            <option>Clothing</option><option>Accessories</option><option>Other</option>
+          </select>
+          <span class="err">Choose a category.</span>
+        </div>
+        <div class="field">
+          <label for="f_date">Date found <span class="req">*</span></label>
+          <input id="f_date" name="date" type="date" required max="2026-12-31">
+          <span class="err">Enter the date (not in the future).</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f_loc">Found location <span class="req">*</span></label>
+        <input id="f_loc" name="location" required placeholder="e.g. Classroom No. 302, New Building">
+        <span class="err">Where did you last see it?</span>
+      </div>
+      <div class="field">
+        <label for="f_desc">Description <span class="req">*</span></label>
+        <textarea id="f_desc" name="description" required placeholder="Colour, brand, marks, contents… (kept public)"></textarea>
+        <span class="err">Describe the item — this is how matches are made.</span>
+      </div>
+      <div class="field">
+        <label for="f_image">Photo (optional)</label>
+        <input id="f_image" type="file" accept="image/jpeg,image/png,image/webp">
+        <span class="mono" id="fileInfo">JPG / PNG / WebP · max 2 MB</span>
+      </div>
+      <button class="btn btn-lime" id="submitBtn" type="submit" data-cursor="Send">Submit report <span class="arr">→</span></button>
+      <p class="form-note">Your contact details stay private. The archive team reaches you directly when a match is verified. Only sign-in users can track this report.</p>
+    </form>
+    <div id="reportDone" style="display:none" class="empty-state">
+      <span class="mono" style="color:#1e7d46">Report received</span>
+      <h3 style="margin:10px 0">It's in the archive.</h3>
+      <p>Reference <strong class="mono" id="doneId"></strong>. We'll watch for matches and contact you privately.</p>
+      <br>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn" id="reportAgain">Report another</button>
+        <a class="btn btn-lime" href="browse.html">Browse archive</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

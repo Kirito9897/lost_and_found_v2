@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f1e9">
+  <meta name="description" content="Lost something on campus? Find it again with the campus object archive.">
+  <title>LOST/FOUND — Campus Object Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-brand"><span>LOST<em>/</em>FOUND</span></div>
+    <div class="preloader-meter"><span class="preloader-count" id="plCount">0%</span><span class="preloader-text">loading...</span><i></i></div>
+  </div>
+  <main>
+    <section class="hero">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> THE CAMPUS OBJECT ARCHIVE <span>· EST. 2026</span></p>
+        <h1><span class="row"><span>LOST</span></span><span class="row"><span>THINGS.</span></span><span class="row accent-row"><span>FOUND <i>HERE.</i></span></span></h1>
+        <div class="hero-foot">
+          <p class="hero-intro">The little things matter. Search what’s been found, or leave a note about what you’ve lost. We’ll help it find its way back.</p>
+          <div class="hero-actions"><a class="btn btn-lime" href="browse.html">Browse the archive <span class="arr">↗</span></a><a class="text-link" href="report-lost.html">I lost something <span>↗</span></a></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="A collection of everyday belongings waiting to be reunited with their owners">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <div class="hero-sticker sticker-top">OBJECTS<br>WITH STORIES</div>
+        <div class="object object-book"><span>FIELD NOTES</span><b>VOL. 04</b></div>
+        <div class="object object-key"><span class="key-ring"></span><span class="key-stem"></span><span class="key-tooth"></span></div>
+        <div class="object object-card"><small>CAMPUS ID</small><span class="card-avatar"></span><b>IT’S YOURS.</b><i>Return to archive</i></div>
+        <div class="object object-earbud"><span></span></div>
+        <div class="hero-sticker sticker-bottom">GOOD THINGS<br>COME BACK <b>↗</b></div>
+        <div class="visual-index mono">01 — 04<br>RECOVERY IN MOTION</div>
+      </div>
+      <a class="scroll-cue mono" href="#journey"><span>SCROLL TO SEE HOW</span><b>↓</b></a>
+    </section>
+    <section class="ticker" aria-label="Lost to found"><div>LOST <span>✳</span> DISCOVERED <span>✳</span> VERIFIED <span>✳</span> RETURNED <span>✳</span> LOST <span>✳</span> DISCOVERED <span>✳</span> VERIFIED <span>✳</span> RETURNED <span>✳</span></div></section>
+    <section class="journey section-wrap" id="journey">
+      <div class="section-heading"><p class="eyebrow">A SHORT WAY HOME <span>· 01—04</span></p><h2>FOUND IT.<br><em>NOW WHAT?</em></h2><p>Every report moves through a simple, thoughtful process. No guesswork. Just people helping people.</p></div>
+      <div class="journey-track"><div class="journey-progress"></div>
+        <article class="journey-step"><span class="step-no">01</span><span class="step-mark">↗</span><h3>Report it</h3><p>Tell us what’s missing or what you’ve picked up. A few details go a long way.</p></article>
+        <article class="journey-step"><span class="step-no">02</span><span class="step-mark">⌕</span><h3>Make a match</h3><p>Browse recent finds and use the details to spot the thing that might be yours.</p></article>
+        <article class="journey-step"><span class="step-no">03</span><span class="step-mark">✓</span><h3>Verify it</h3><p>Share a detail only the owner would know. We’ll help keep every handoff safe.</p></article>
+        <article class="journey-step"><span class="step-no">04</span><span class="step-mark">⌁</span><h3>Bring it home</h3><p>Coordinate a simple meetup and get back to the rest of your day.</p></article>
+      </div>
+      <div class="journey-cta"><span class="mono">A LOST THING ISN’T LOST FOREVER.</span><a class="btn" href="browse.html">See what’s in the archive <span class="arr">↗</span></a></div>
+    </section>
+  </main>
+  <script src="data.js"></script><script src="layout.js"></script><script src="main.js"></script>
+</body>
+</html>

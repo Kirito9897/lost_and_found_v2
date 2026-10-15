@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact — LOST/FOUND</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+<section class="form-page container">
+  <div class="form-side">
+    <span class="mono">Help Desk</span>
+    <h1>Talk to<br>the <span style="color:transparent;-webkit-text-stroke:1.5px var(--ink)">archive.</span></h1>
+    <p>Questions about a report, a verification, or a pickup? Send a message and the campus team will reply to your registered email.</p>
+    <br>
+    <span class="mono">Email — support@campuslostfound.edu</span><br><br>
+    <span class="mono">Hours — Mon–Fri · 09:00–17:00</span>
+  </div>
+  <div>
+    <form class="form-panel" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="c_name">Name <span class="req">*</span></label>
+          <input id="c_name" required placeholder="Your name">
+          <span class="err">Please enter your name.</span>
+        </div>
+        <div class="field">
+          <label for="c_email">Email <span class="req">*</span></label>
+          <input id="c_email" type="email" required placeholder="you@campus.edu">
+          <span class="err">Enter a valid email.</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="c_ref">Report reference (optional)</label>
+        <input id="c_ref" placeholder="e.g. LF-2026-004">
+      </div>
+      <div class="field">
+        <label for="c_msg">Message <span class="req">*</span></label>
+        <textarea id="c_msg" required placeholder="How can we help?"></textarea>
+        <span class="err">Please write a message.</span>
+      </div>
+      <button class="btn btn-lime" id="cSubmit" type="submit" data-cursor="Send">Send message <span class="arr">→</span></button>
+      <p class="form-note" id="privacy">We only use your details to respond to this message. Report data is shared publicly only after review, and private contact information is never published.</p>
+    </form>
+    <div id="contactDone" style="display:none" class="empty-state">
+      <span class="mono" style="color:#1e7d46">Message sent</span>
+      <h3 style="margin:10px 0">We'll be in touch.</h3>
+      <p>The campus team replies within one working day.</p>
+    </div>
+  </div>
+</section>
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+<script>
+/* prefill ref from query string */
+(function(){var r=new URLSearchParams(location.search).get('ref');if(r)document.getElementById('c_ref').value=r;})();
+</script>
+</body>
+</html>

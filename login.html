@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sign In — LOST/FOUND</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+<div class="auth-wrap">
+  <div class="auth-visual">
+    <span class="mono" style="color:var(--lime)">LOST/FOUND · Members</span>
+    <h2>Welcome<br><span class="lime">back to the</span><br>archive.</h2>
+    <span class="mono" style="color:rgba(243,240,232,.5)">Session-secured · HttpOnly cookies</span>
+  </div>
+  <div class="auth-form">
+    <form class="auth-form-inner" id="authForm" novalidate>
+      <span class="mono">Access your account</span>
+      <h1>Sign in</h1>
+      <div class="form-alert" id="authAlert" role="alert"></div>
+      <div class="field">
+        <label for="a_email">Email</label>
+        <input id="a_email" type="email" autocomplete="email" required placeholder="you@campus.edu">
+      </div>
+      <div class="field">
+        <label for="a_pw">Password</label>
+        <div class="pw-wrap">
+          <input id="a_pw" type="password" autocomplete="current-password" required placeholder="••••••••">
+          <button type="button" class="pw-toggle">Show</button>
+        </div>
+      </div>
+      <label style="display:flex;gap:10px;align-items:center;font-size:.85rem;color:var(--grey)">
+        <input type="checkbox" id="a_admin"> Sign in as administrator
+      </label>
+      <button class="btn btn-lime" type="submit" data-cursor="Go">Sign in <span class="arr">→</span></button>
+      <p style="font-size:.85rem;color:var(--grey)">New here? <a href="register.html" style="text-decoration:underline">Create an account</a></p>
+    </form>
+  </div>
+</div>
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

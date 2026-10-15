@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My Account — LOST/FOUND</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<section class="dash container">
+  <div class="dash-head">
+    <div>
+      <span class="mono">Personal Archive</span>
+      <h1 style="margin-top:8px">Hello, <span id="dashName"></span></h1>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn btn-lime btn-sm" href="report-lost.html">Report lost</a>
+      <a class="btn btn-sm" href="report-found.html">Report found</a>
+      <button class="btn btn-sm" id="signOut">Sign out</button>
+    </div>
+  </div>
+
+  <div class="tabs" id="dashTabs">
+    <button class="chip active" data-v="all">All reports</button>
+    <button class="chip" data-v="pending">Pending</button>
+    <button class="chip" data-v="verified">Verified</button>
+    <button class="chip" data-v="returned">Returned</button>
+  </div>
+
+  <div class="table-wrap">
+    <table class="reports-table" id="dashTable">
+      <thead><tr><th>ID</th><th>Item</th><th>Type</th><th>Date</th><th>Status</th><th>Next step</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="empty-state" id="dashEmpty" style="display:none">
+    <h3>No reports yet</h3>
+    <p class="mono">When you report a lost or found item it will appear here.</p>
+    <br><a class="btn btn-lime" href="report-lost.html">Make your first report</a>
+  </div>
+</section>
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

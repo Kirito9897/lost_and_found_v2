@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LOST/FOUND — A Campus Object Archive</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-eyebrow">
+      <span class="mono">CAMPUS OBJECT ARCHIVE · VOL. 2026</span>
+      <p>Everyday things have stories. We help them find their way back home.</p>
+    </div>
+    <span class="mono">LOST → DISCOVERED → VERIFIED → RETURNED</span>
+  </div>
+  <h1 aria-label="Lost something? Let's bring it back.">
+    <span class="row"><span>LOST</span></span>
+    <span class="row"><span>SOMETHING?</span></span>
+    <span class="row"><span class="outline">LET'S BRING</span></span>
+    <span class="row"><span class="lime">IT BACK.</span></span>
+  </h1>
+  <div class="hero-foot">
+    <p class="hero-desc">The campus lost-and-found archive. <strong>Report</strong> what you've lost, <strong>register</strong> what you've found, and our team verifies every reunion — safely and privately.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lime" href="report-lost.html" data-cursor="Go">REPORT AN ITEM <span class="arr">↗</span></a>
+      <a class="btn" href="browse.html" data-cursor="Go">BROWSE FOUND ITEMS</a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <span>Verified campus platform</span><span>Session-secured</span><span>Est. 2026</span>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Report <span class="dot">●</span> Match <span class="dot">●</span> Verify <span class="dot">●</span> Return <span class="dot">●</span> Lost <span class="dot">●</span> Found <span class="dot">●</span></span>
+    <span>Report <span class="dot">●</span> Match <span class="dot">●</span> Verify <span class="dot">●</span> Return <span class="dot">●</span> Lost <span class="dot">●</span> Found <span class="dot">●</span></span>
+  </div>
+</div>
+
+<section class="section" id="recent">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title reveal">Recent <span class="outline">Reports</span></h2>
+      <a class="btn btn-sm reveal" href="browse.html" data-cursor="Go">View all <span class="arr">→</span></a>
+    </div>
+    <div class="items-grid" id="homeGrid"></div>
+  </div>
+</section>
+
+<section class="section journey" id="journey">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="mono reveal" style="color:var(--lime)">The Recovery Journey</span>
+        <h2 class="section-title reveal" style="margin-top:12px">How an object<br><span class="outline">finds its way home</span></h2>
+      </div>
+    </div>
+    <div class="journey-track">
+      <div class="journey-line"><div class="journey-progress"></div></div>
+      <div class="journey-step reveal"><div class="journey-dot"></div><span class="journey-num">01</span><h3>Lost</h3><p>Something goes missing. A report enters the archive with date, place and description.</p></div>
+      <div class="journey-step reveal" data-delay=".1"><div class="journey-dot"></div><span class="journey-num">02</span><h3>Discovered</h3><p>Someone finds it and registers the discovery. The archive looks for a match.</p></div>
+      <div class="journey-step reveal" data-delay=".2"><div class="journey-dot"></div><span class="journey-num">03</span><h3>Verified</h3><p>Our team privately confirms ownership with the original owner. No details exposed.</p></div>
+      <div class="journey-step reveal" data-delay=".3"><div class="journey-dot"></div><span class="journey-num">04</span><h3>Returned</h3><p>The object is handed back. Another story ends where it should — at home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title reveal">Two <span class="outline">Paths</span></h2>
+      <span class="mono reveal">Choose yours</span>
+    </div>
+    <div class="paths">
+      <a class="path reveal" href="report-lost.html" data-cursor="Report →">
+        <span class="mono">Path 01</span>
+        <h3>I lost<br>something</h3>
+        <p>Tell the archive what went missing. We'll watch for matches and contact you privately when it surfaces.</p>
+        <span class="btn btn-lime">Report a lost item <span class="arr">→</span></span>
+      </a>
+      <a class="path reveal" data-delay=".1" href="report-found.html" data-cursor="Register →">
+        <span class="mono">Path 02</span>
+        <h3>I found<br>something</h3>
+        <p>Register what you've discovered. We hold it safely and verify the owner before anyone collects it.</p>
+        <span class="btn">Report a found item <span class="arr">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function(){
+  var grid=document.getElementById('homeGrid');
+  if(!grid) return;
+  LFStore.all().slice(0,5).forEach(function(r,i){
+    var a=document.createElement('article');
+    a.className='item-cell reveal'; a.dataset.delay=i*0.06; a.dataset.cursor='View →';
+    a.innerHTML=cellHTML(r);
+    a.addEventListener('click',function(){location.href='item.html?id='+encodeURIComponent(r.id);});
+    grid.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>

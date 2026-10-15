@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Browse — LOST/FOUND</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="browse">
+<section class="section" style="padding-top:150px">
+  <div class="container">
+    <div class="section-head">
+      <h1 class="section-title">The <span class="outline">Archive</span></h1>
+      <span class="mono">Search · Filter · Recover</span>
+    </div>
+
+    <div class="filter-bar">
+      <div class="chips" data-kind="type">
+        <button class="chip active" data-v="all">All</button>
+        <button class="chip" data-v="lost">Lost</button>
+        <button class="chip" data-v="found">Found</button>
+      </div>
+      <div class="chips" data-kind="cat">
+        <button class="chip active" data-v="all">All categories</button>
+        <button class="chip" data-v="Electronics">Electronics</button>
+        <button class="chip" data-v="Books / Stationery">Books</button>
+        <button class="chip" data-v="Documents">Documents</button>
+        <button class="chip" data-v="Other">Other</button>
+      </div>
+      <div class="search-wrap">
+        <input class="search-input" id="browseSearch" type="search" placeholder="SEARCH THE ARCHIVE…" aria-label="Search reports">
+        <select class="search-input" id="browseSort" aria-label="Sort">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+        </select>
+        <button class="chip" id="browseReset">Reset</button>
+      </div>
+    </div>
+
+    <div class="items-grid" id="browseGrid"></div>
+    <div class="empty-state" id="browseEmpty" style="display:none">
+      <h3>Nothing in the archive matches</h3>
+      <p class="mono">Try clearing a filter — or be the one who reports it.</p>
+      <br><a class="btn btn-lime" href="report-lost.html">Report an item</a>
+    </div>
+  </div>
+</section>
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
